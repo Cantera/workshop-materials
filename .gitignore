@@ -142,3 +142,12 @@ cython_debug/
 
 # VS Code
 .vscode/
+
+# Our output files
+**/output/
+
+# MacOS files
+.DS_Store
+
+# PyCharm files
+.idea/
