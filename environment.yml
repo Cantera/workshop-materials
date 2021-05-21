@@ -1,0 +1,11 @@
+name: false
+channels:
+  - conda-forge/label/rust_dev
+  - conda-forge
+dependencies:
+  - cantera
+  - scipy
+  - matplotlib
+  - notebook
+  - pandas
+prefix: /Users/bryan/mambaforge/envs/ct-workshop
