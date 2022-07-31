@@ -1,0 +1,13 @@
+name: ct-workshop
+channels:
+  - conda-forge
+  - cantera
+dependencies:
+  - cantera=2.6.*
+  - numpy
+  - scipy
+  - matplotlib
+  - notebook
+  - jupyterlab
+  - scikits.odes
+  - pandas
