@@ -2,6 +2,8 @@
 
 This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
 
+If you are participating in the Fall 2022 ACS workshop (25 August, Chicago, IL), please switch the branch from `main` to `acs-2022`.
+
 ## Installation Instructions
 
 Please choose from the following list:
