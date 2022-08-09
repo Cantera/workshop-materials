@@ -6,8 +6,7 @@ If you are participating in the Fall 2022 ACS workshop (25 August, Chicago, IL),
 
 - Click on the button that says `main` in the upper left corner.
 - A drop-down will appear.  Choose the `acs-2022` option:
-
-![Switch to acs-2022 branch](./images/SwitchBranch.png)
+<img src="./images/SwitchBranch.png" alt="Image showing how to switch branches." style="width: 350px;"/>
 
 ## Installation Instructions
 
