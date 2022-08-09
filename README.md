@@ -2,13 +2,16 @@
 
 This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
 
-If you are participating in the Fall 2022 ACS workshop (25 August, Chicago, IL), please switch the branch from `main` to `acs-2022`.
+> **Note**
+> **If you are participating in the Fall 2022 ACS workshop DO THIS FIRST</strong>**
 
+
+Please switch the branch from `main` to `acs-2022`:
 - Click on the button that says `main` in the upper left corner.
 - A drop-down will appear.  Choose the `acs-2022` option:
 <img src="./images/SwitchBranch.png" alt="Image showing how to switch branches." style="width: 350px;"/>
 
-## Installation Instructions
+<!-- ## Installation Instructions
 
 Please choose from the following list:
 
@@ -98,4 +101,4 @@ jupyter notebook
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-Hooray! You're all set! See you on Sunday!
+Hooray! You're all set! See you on Sunday!-->
