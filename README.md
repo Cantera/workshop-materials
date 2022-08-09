@@ -4,6 +4,11 @@ This repository has the Jupyter Notebooks and other materials used at Cantera wo
 
 If you are participating in the Fall 2022 ACS workshop (25 August, Chicago, IL), please switch the branch from `main` to `acs-2022`.
 
+- Click on the button that says `main` in the upper left corner.
+- A drop-down will appear.  Choose the `acs-2022` option:
+
+![Switch to acs-2022 branch](./images/SwitchBranch.png)
+
 ## Installation Instructions
 
 Please choose from the following list:
