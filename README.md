@@ -1,8 +1,6 @@
 # Cantera Workshop Materials
 
-This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
-
-If you are participating in the Fall 2022 ACS workshop (25 August, Chicago, IL), please switch the branch from `main` to `acs-2022`.
+This repository has the Jupyter Notebooks and other materials used at Cantera workshop associated with the Fall 2022 ACS workshop (25 August, Chicago, IL), please make sure you have switched the branch from `main` to `acs-2022`.
 
 ## Installation Instructions
 
@@ -58,7 +56,7 @@ jupyter notebook
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-Hooray! You're all set! See you on Sunday!
+Hooray! You're all set! See you on 25 August!
 
 ### I installed Python from the official site
 
@@ -94,4 +92,4 @@ jupyter notebook
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-Hooray! You're all set! See you on Sunday!
+Hooray! You're all set! See you on 25 August!
