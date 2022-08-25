@@ -2,6 +2,21 @@
 
 This repository has the Jupyter Notebooks and other materials used at Cantera workshop associated with the Fall 2022 ACS workshop (25 August, Chicago, IL), please make sure you have switched the branch from `main` to `acs-2022`.
 
+## Schedule
+
+| Start Time | End Time | Topic | Presenter|
+|------------|----------|-------------------------------------------------|-----------|
+| 1200 |1215 | Welcome, Introduction to Cantera | Steven |
+| 1215 | 1250 | Getting Started: Tutorial | Gandhali |
+|1250 | 1300 | Break | |
+| 1300 | 1325 | Surface Equilibrium Calculations | Chao |
+| 1325 | 1350 | Reactor Simulations: Perfectly Stirred Reactor| Gandhali |
+|1350 | 1400 | Break | |
+|1400 | 1425 | Reactor Simulations: Plug Flow Reactor | Chao |
+| 1425 | 1445 | Next Steps: Where to Find More Information | Steven |
+| 1445 | 1500 | Wrap up, Q&A | |
+|
+
 ## Installation Instructions
 
 Please choose from the following list:
