@@ -9,3 +9,4 @@ dependencies:
   - matplotlib
   - notebook
   - pandas
+  - ipympl
