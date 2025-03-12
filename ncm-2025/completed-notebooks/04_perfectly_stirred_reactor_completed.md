@@ -18,7 +18,7 @@ editable: true
 slideshow:
   slide_type: ''
 ---
-%matplotlib inline
+%matplotlib widget
 
 import cantera as ct
 import numpy as np
@@ -120,7 +120,7 @@ We also set up a `PressureController` which is connected to the `inlet` mass flo
 ```{code-cell} ipython3
 inlet = ct.MassFlowController(upstream, reactor)
 inlet.mass_flow_rate = mdot_in
-outlet = ct.PressureController(reactor, downstream, master=inlet, K=100)
+outlet = ct.PressureController(reactor, downstream, primary=inlet, K=100)
 ```
 
 ### 3. Create and run the reactor network
@@ -178,7 +178,7 @@ extinctions.TP = 300.0, ct.one_atm
 In this `SolutionArray`, each row is a different residence time and each column is a different equivalence ratio.
 
 ```{code-cell} ipython3
-for i, j in np.ndindex(*extinctions._shape):
+for i, j in np.ndindex(*extinctions.shape):
     phi = phis[j]
     residence_time = residence_times[i]
     gas.TPX = extinctions[i, j].TPX
@@ -189,7 +189,7 @@ for i, j in np.ndindex(*extinctions._shape):
     reactor = ct.IdealGasReactor(gas)
     inlet = ct.MassFlowController(upstream, reactor)
     inlet.mass_flow_rate = mdot_in
-    outlet = ct.PressureController(reactor, downstream, master=inlet)
+    outlet = ct.PressureController(reactor, downstream, primary=inlet)
     netw = ct.ReactorNet([reactor])
 
     netw.advance_to_steady_state()

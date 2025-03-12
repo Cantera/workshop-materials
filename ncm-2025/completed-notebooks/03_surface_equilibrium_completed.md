@@ -117,7 +117,7 @@ print('     by hand:      ', hand_coverage)
 
 ```{code-cell} ipython3
 import cantera as ct
-%matplotlib inline
+%matplotlib widget
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
@@ -198,7 +198,7 @@ print('     by hand:      ', hand_coverage)
 print('Difference = ', round(cantera_coverage - hand_coverage,19))
 ```
 
-## We get the exact same result - great! 
+## We get the exact same result - great!
 
 ```{code-cell} ipython3
 # Note we can find the H(S) species index, without going to the input file:

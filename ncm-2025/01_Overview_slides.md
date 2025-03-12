@@ -20,7 +20,7 @@ kernelspec:
 
 ## Jupyter Notebooks
 
-The examples are available at https://github.com/Cantera/workshop-materials/tree/acs-2022 
+The examples are available at https://github.com/Cantera/workshop-materials/tree/acs-2022
 
 +++ {"slideshow": {"slide_type": "slide"}}
 
@@ -90,7 +90,6 @@ The examples are available at https://github.com/Cantera/workshop-materials/tree
 +++ {"slideshow": {"slide_type": "slide"}}
 
 # Application Areas
-   
 
 +++ {"slideshow": {"slide_type": "fragment"}}
 
@@ -128,7 +127,6 @@ and you can begin using Cantera!
 - Can now also install via `pip`
 
 +++ {"slideshow": {"slide_type": "subslide"}}
-
 
 ## Other approaches
 -Ubuntu users can install the cantera-python3 package from the Cantera PPA.

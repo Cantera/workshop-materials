@@ -20,7 +20,7 @@ kernelspec:
 import cantera as ct
 import numpy as np
 from scipy.integrate import solve_ivp
-%matplotlib inline
+%matplotlib widget
 import matplotlib.pyplot as plt
 print(f"Cantera Version: {ct.__version__}")
 ```
