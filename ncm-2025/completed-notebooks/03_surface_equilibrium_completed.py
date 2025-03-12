@@ -91,7 +91,7 @@ print('     by hand:      ', hand_coverage)
 
 # %%
 import cantera as ct
-# %matplotlib widget
+%matplotlib widget
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
