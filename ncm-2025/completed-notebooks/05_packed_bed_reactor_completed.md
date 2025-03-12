@@ -36,7 +36,7 @@ Comparing both of these on a Levenspiel plot shows that the limiting case for a 
 ```{code-cell} ipython3
 import cantera as ct
 
-%matplotlib inline
+%matplotlib widget
 import matplotlib.pyplot as plt
 
 print(f"Using Cantera version: {ct.__version__}")
@@ -122,7 +122,7 @@ The plug flow reactor is represented by a linear chain of zero-dimensional react
 
 +++
 
-Next, we need to initialize our reactor objects of the type 'IdealGasReactor'. We also need to attach a surface onto it to run all surface reactions simultaneously. 
+Next, we need to initialize our reactor objects of the type 'IdealGasReactor'. We also need to attach a surface onto it to run all surface reactions simultaneously.
 
 ```{code-cell} ipython3
 r = ct.IdealGasReactor(gas, energy='off')
@@ -140,7 +140,7 @@ downstream = ct.Reservoir(gas, name='downstream')
 
 m = ct.MassFlowController(upstream, r, mdot=mass_flow_rate)
 
-v = ct.PressureController(r, downstream, master=m, K=1e-5)
+v = ct.PressureController(r, downstream, primary=m, K=1e-5)
 ```
 
 We will then create a `ReactorNet` object.

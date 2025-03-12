@@ -20,7 +20,7 @@ kernelspec:
 import cantera as ct
 import numpy as np
 from scipy.integrate import solve_ivp
-%matplotlib inline
+%matplotlib widget
 import matplotlib.pyplot as plt
 
 print(f"Cantera Version: {ct.__version__}")
@@ -136,7 +136,6 @@ Equations 1-4 are the governing equations for an Ideal Gas Reactor.
 #### Inside Cantera:
 
 ```{raw-cell}
-
 cdef class DelegatedReactor(Reactor):
     """
     A base class for a reactor with delegated methods where the base
@@ -264,7 +263,7 @@ class InertialWallReactor(ct.ExtensibleIdealGasReactor):
         # This method is used to set the state of the Reactor and Wall objects
         # based on the new values for the state vector provided by the ODE solver
         self.v_wall = y[self.i_wall]
-        self.walls[0].set_velocity(self.v_wall)
+        self.walls[0].velocity = self.v_wall
 
     def after_eval(self, t, LHS, RHS):
         # Calculate the time derivative for the additional equation
@@ -311,18 +310,14 @@ while net.time < 0.5:
 ### Some basic plotting:
 
 ```{code-cell} ipython3
-try:
-    import matplotlib.pyplot as plt
-    L1 = plt.plot(states.t, states.T, color='r', label='T', lw=2)
-    plt.xlabel('time (s)')
-    plt.ylabel('Temperature (K)')
-    plt.twinx()
-    L2 = plt.plot(states.t, states.V, label='volume', lw=2)
-    plt.ylabel('Volume (m$^3$)')
-    plt.legend(L1+L2, [line.get_label() for line in L1+L2], loc='lower right')
-    plt.show()
-except ImportError:
-    print('Matplotlib not found. Unable to plot results.')
+fig, ax1 = plt.subplots()
+L1 = ax1.plot(states.t, states.T, color='r', label='T', lw=2)
+ax1.set_xlabel('time (s)')
+ax1.set_ylabel('Temperature (K)')
+ax2 = ax1.twinx()
+L2 = ax2.plot(states.t, states.V, label='volume', lw=2)
+ax2.set_ylabel('Volume (m$^3$)')
+ax2.legend(L1+L2, [line.get_label() for line in L1+L2], loc='lower right')
 ```
 
 ```{code-cell} ipython3

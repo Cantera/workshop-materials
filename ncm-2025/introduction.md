@@ -226,6 +226,7 @@ Kc.shape
 fig, ax = plt.subplots(1,2)
 ax[0].plot(T, dh0)
 ax[1].plot(T, ds0)
+ax[0].legend([R1.equation, R2.equation])
 ```
 
 ```{code-cell} ipython3
