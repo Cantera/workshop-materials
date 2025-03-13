@@ -1,101 +1,51 @@
----
-jupytext:
-  formats: ipynb,md:myst
-  text_representation:
-    extension: .md
-    format_name: myst
-    format_version: 0.13
-    jupytext_version: 1.16.7
-kernelspec:
-  display_name: Python 3 (ipykernel)
-  language: python
-  name: python3
----
-
-+++ {"slideshow": {"slide_type": "slide"}, "editable": true}
-
 # Welcome!
-
-+++ {"slideshow": {"slide_type": "slide"}}
 
 ## Jupyter Notebooks
 
 The examples are available at https://github.com/Cantera/workshop-materials/tree/acs-2022
 
-+++ {"slideshow": {"slide_type": "slide"}}
-
-# 2022 ACS Fall Meeting Cantera Workshop
-## 25 August, 2022
-## Steven DeCaluwe, Gandhali Kogekar, Chao Xu
-
-+++ {"slideshow": {"slide_type": "subslide"}}
+# 2025 National Combustion Meeting | Cantera Workshop
+## March 16th, 2025
+## Richard West, Raymond Speth
 
 # Agenda
 
-+++ {"slideshow": {"slide_type": "fragment"}}
-
-1. 12:00  Introduction to Cantera
-   - General Information
-   - Installation options
-   - Community Resources
-2. 12:15 How to use Cantera - tutorial
-3. 12:50 Break
-4. 1:00 Surface Equilibrium Calculations, by hand and in Cantera
-5. 1:30 Reactor Simulations in Cantera
-   - 1:30 Perfectly Stirred Reactor (PSR)
-   - 1:50 Plug Flow Reactor (PFR)
-6. 2:30 Scientific theory overview
-   - What thermo and kinetic models are available?
-   - Where can I find more information?
-
-+++ {"slideshow": {"slide_type": "slide"}}
+| Start Time (EST) | End Time | Session      |
+|------------------|----------|--------------|
+| 9:00  | 12:00 | Introduction & Tutorials (including a break) |
+| 12:00 | 13:30 | *Lunch break (not provided)*           |
+| 13:30 | 14:30 | Lighting Talks (contributions welcome)  |
+| 14:30 | 15:00 | Contributing to Cantera                      |
+| 15:00 | 15:30 | *Break*       |
+| 15:30 | 18:00 | What's new in Cantera (including a break)  |
 
 # Overview of Cantera
-
-+++ {"slideshow": {"slide_type": "subslide"}}
 
 ![CanteraOverview.png](images/CanteraOverview.png)
 
-+++ {"slideshow": {"slide_type": "subslide"}}
+## Property Calculator
 
-# Overview of Cantera
+  * Set state of your phase object(s)
+  * Evaluate individual properties via function calls.
 
-+++ {"slideshow": {"slide_type": "fragment"}}
+## "Canonical Simulations"
 
-* Property Calculator
-    * Set state of your phase object(s)
-    * Evaluate individual properties via function calls.
+  * Cantera comes pre-packaged with a number of simulation tools and examples for a limited set of 'classic' problems.
+      * 0-D reactors
+      * 1-D flames, flows, and reactors
+  * These models take user inputs for intial/inlet conditions, reactor geometry, etc.
+  * The model sets the state of Cantera objects and evaluating properties to provide terms required to solve/integrate conservation equations.
 
-+++ {"slideshow": {"slide_type": "fragment"}}
+## Property evaluation for in-house simulation code
 
-* "Canonical Simulations"
-    * Cantera comes pre-packaged with a number of simulation tools and examples for a limited set of 'classic' problems.
-        * 0-D reactors
-        * 1-D flames, flows, and reactors
-    * These models take user inputs for intial/inlet conditions, reactor geometry, etc.
-    * The model sets the state of Cantera objects and evaluating properties to provide terms required to solve/integrate conservation equations.
-
-+++ {"slideshow": {"slide_type": "subslide"}}
-
-# Overview of Cantera
-
-+++ {"slideshow": {"slide_type": "fragment"}}
-
-* Property evaluation for in-house simulation code
-    * For more complex or novel simulations, the user writes their own simulation code.
-        * Establishes a solution vector to describe the system state
-        * Defines and codes conservation equations
-        * Writes calls to Cantera to evaluate terms in the conservation equations
-
-+++ {"slideshow": {"slide_type": "slide"}}
+  * For more complex or novel simulations, the user writes their own simulation code.
+      * Establishes a solution vector to describe the system state
+      * Defines and codes conservation equations
+      * Writes calls to Cantera to evaluate terms in the conservation equations
 
 # Application Areas
 
-+++ {"slideshow": {"slide_type": "fragment"}}
-
 ![Apps.png](images/Apps.png)
-
-+++ {"slideshow": {"slide_type": "subslide"}}
 
 * Cantera can be used in a wide variety of applications
   * Combustion
@@ -103,21 +53,17 @@ The examples are available at https://github.com/Cantera/workshop-materials/tree
   * Surface chemistry
   * Non-ideal equations of state
 
-+++ {"slideshow": {"slide_type": "fragment"}}
-
 * Cantera's strength is that it is (relatively) easy to add new functionality
-
-+++ {"slideshow": {"slide_type": "slide"}}
 
 # Installation
 
-+++ {"slideshow": {"slide_type": "fragment"}}
+Installation options are provided on the website: https://cantera.org/install/
 
-Installation options are provided on the website: https://cantera.org/install/ 
 ## Python
+
 - Easiest pathway is via Conda
 ```
-conda create --name ct-env --channel cantera cantera ipython matplotlib jupyter
+conda create --name ct-env --channel conda-forge cantera ipython matplotlib jupyter
 ```
 (to make an environment called `ct-env` (you can choose whatever environment name you want, though). Then in a python command window, type
 ```
@@ -126,21 +72,16 @@ conda activate ct-env
 and you can begin using Cantera!
 - Can now also install via `pip`
 
-+++ {"slideshow": {"slide_type": "subslide"}}
-
 ## Other approaches
--Ubuntu users can install the cantera-python3 package from the Cantera PPA.
+
+- Ubuntu users can install the cantera-python3 package from the Cantera PPA.
 - Fedora / Enterprise Linux users can install python3-cantera using dnf.
 - OpenSUSE users can install packages using zypper.
 - Gentoo users can install using emerge.
 - FreeBSD users can install using pkg.
 - If you want to use the current development version, or add features of your own, you should compile Cantera from source.
 
-+++ {"slideshow": {"slide_type": "slide"}}
-
 # Examples!
-
-+++ {"slideshow": {"slide_type": "fragment"}}
 
 * Examples are available from the Cantera documentation in several formats: https://cantera.org/examples/index.html
   * Python scripts: https://cantera.org/examples/python/index.html
@@ -148,13 +89,11 @@ and you can begin using Cantera!
   * Matlab scripts: https://cantera.org/examples/matlab/index.html
   * Simple C++ examples: https://cantera.org/tutorials/cxx-guide/simple-example.html
 
-+++ {"slideshow": {"slide_type": "slide"}}
-
 # Community Resources
 
-+++ {"slideshow": {"slide_type": "fragment"}}
+## Google Group
 
-* Google Group (https://groups.google.com/forum/#!forum/cantera-users)
+Link: https://groups.google.com/forum/#!forum/cantera-users
   * Email questions to the whole user group
   * The developers watch this group pretty consistently
   * New posters' messages are moderated
@@ -163,31 +102,19 @@ and you can begin using Cantera!
     * Any YAML files required to run the code
     * The OS, interface, and version of Cantera you're using
 
-+++ {"slideshow": {"slide_type": "subslide"}}
-
-# Community Resources
-
-+++ {"slideshow": {"slide_type": "fragment"}}
+## Documentation
 
 * Documentation at https://cantera.org/documentation
 * Has examples and API documentation (we'll come back to this later)
 
-+++ {"slideshow": {"slide_type": "subslide"}}
-
-# Community Resources
-
-+++ {"slideshow": {"slide_type": "fragment"}}
+## GitHub
 
 * Cantera source code is on GitHub
 * https://github.com/Cantera/cantera
 * File bug reports (please be detailed and specific)
 * Create pull requests to merge your new code
 
-+++ {"slideshow": {"slide_type": "subslide"}}
-
-# Community Resources
-
-+++ {"slideshow": {"slide_type": "fragment"}}
+## Other
 
 * Cantera is a fiscally-sponsored project under NumFOCUS
 * NumFOCUS is a non-profit umbrella organization that provides support for open-source scientific software
