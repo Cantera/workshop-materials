@@ -5,7 +5,7 @@
 #
 # Consider adsorption-desorption reactions between a gas phase and an ideal surface lattice.
 #
-# <img src="../images/SurfaceReactions.png" alt="Cartoon of an ideal surface lattice (left side), and of the H2 adsorption reaction (right side)." style="width: 750px;"/>
+# <img src="https://github.com/Cantera/workshop-materials/blob/5110a218d966a907446e8ccd1f06ea132eb5e301/ncm-2025/images/SurfaceReactions.png?raw=true" alt="Cartoon of an ideal surface lattice (left side), and of the H2 adsorption reaction (right side)." style="width: 750px; background: white; border:5px solid white"/>
 #
 # Note that the exact geometry of the lattice is irrelevant; the only assumption is a user-supplied density of surface sites, $\Gamma_\circ $, with units ${\rm \left[\frac{mol}{m^2}\right]}$.
 
