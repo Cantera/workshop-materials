@@ -1,2 +1,2 @@
 [tool.jupytext]
-formats = "ipynb,md:myst"
+formats = "ipynb,py:percent"
