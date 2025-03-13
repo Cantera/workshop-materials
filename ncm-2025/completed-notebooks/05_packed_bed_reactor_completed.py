@@ -16,7 +16,7 @@
 #
 # Comparing both of these on a Levenspiel plot shows that the limiting case for a large number of CSTRs (with differentially small volumes) in series will yield an approximation of a PBR:
 #
-# <img src="../images/levenspiel_plot.png"  width="500">
+# <img src="https://github.com/Cantera/workshop-materials/blob/5110a218d966a907446e8ccd1f06ea132eb5e301/ncm-2025/images/levenspiel_plot.png?raw=true"  width="500" style="background: white; border:5px solid white">
 
 # %%
 import cantera as ct
@@ -103,7 +103,7 @@ mass_flow_rate = velocity * gas.density * area
 # #### Creating a chain of CSTRs to approximate a PFR
 # The plug flow reactor is represented by a linear chain of zero-dimensional reactors. The gas at the inlet to the first one has the specified inlet composition, and for all others the inlet composition is fixed at the composition of the reactor immediately upstream. Since in a PFR model there is no diffusion, the upstream reactors are not affected by any downstream reactors, and therefore the problem may be solved by simply marching from the first to last reactor, integrating each one to steady state.
 #
-# <img src="../images/Chain_of_CSTRs.png"  width="700">
+# <img src="https://github.com/Cantera/workshop-materials/blob/5110a218d966a907446e8ccd1f06ea132eb5e301/ncm-2025/images/Chain_of_CSTRs.png?raw=true"  width="700" style="background: white; border:5px solid white">
 
 # %% [markdown]
 # Next, we need to initialize our reactor objects of the type 'IdealGasReactor'. We also need to attach a surface onto it to run all surface reactions simultaneously.

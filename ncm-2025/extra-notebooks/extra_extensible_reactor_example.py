@@ -31,7 +31,7 @@ print(f"Cantera Version: {ct.__version__}")
 # #### Unmodified Perfectly Stirred Reactor
 # The perfectly stirred reactor (aka "PSR") is defined by a relatively simple set of governing equations, providing an excellent opportunity to demonstrate how we can use Cantera as a "calculator" to provide the terms and variables required for solving a set of equations of our own choosing.
 #
-# <img src="PSR.png" alt="Cartoon of a Perfectly Stirred Chemical Reactor." style="width: 500px;"/>
+# <img src="https://github.com/Cantera/workshop-materials/blob/5110a218d966a907446e8ccd1f06ea132eb5e301/ncm-2025/images/PSR.png?raw=true" alt="Cartoon of a Perfectly Stirred Chemical Reactor." style="width: 500px; background: white; border:5px solid white"/>
 #
 # The model includes user inputs for the inlet gas conditions (temperature, pressure, composition) and mass flux (typically defined in terms of the residence time $\tau$), some condition for the outlet flow, and an optional heat transfer boundary condition.
 

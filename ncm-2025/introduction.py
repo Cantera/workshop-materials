@@ -217,7 +217,7 @@ ax.legend();
 # <div>
 # <center>
 # <!-- <img src="attachment:d2223bec-96e3-4f07-8e46-d0450fcd6be5.png", width="400" /> -->
-#     <img src="https://raw.githubusercontent.com/Cantera/cantera-jupyter/e738d0ef0fdd212a0b543d6eb2279572b42530a2/reactors/images/stirredReactorCartoon.png" width="400" />
+#     <img src="https://raw.githubusercontent.com/Cantera/cantera-jupyter/e738d0ef0fdd212a0b543d6eb2279572b42530a2/reactors/images/stirredReactorCartoon.png" width="400" style="background: white; border:5px solid white"/>
 # </center>
 # </div>
 #
