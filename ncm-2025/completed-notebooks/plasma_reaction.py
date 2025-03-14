@@ -1,43 +1,30 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: light
-#       format_version: '1.5'
-#       jupytext_version: 1.16.1
-#   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
-# ---
-
-# # Plasma Phase
+# %% [markdown]
+# ## Plasma Phase
 #
 # Plasma is the fourth state of matter. A non-equilibrium plasma is a plasma with the electron temperature much higher than the gas temperature. The energy distribution of electron energy of non-equilibrium plasmas can be non-maxwellian depends on the electric/magnetic field and the gas molecules. PlasmaPhase manages the **electron energy distribution function (EEDF)**, which is used for calculating plasma properties.
 #
-# ## Isortopic velocity
+# ### Isotropic velocity
 #
-# The generalized isotropic-velocity electron energy distribution is given by:  
+# The generalized isotropic-velocity electron energy distribution is given by:
 # $$
 # f(\epsilon) = c_1 \frac{\sqrt{\epsilon}}{\epsilon_m^{3/2}}
 #          \exp \left(-c_2 \left(\frac{\epsilon}{\epsilon_m}\right)^x \right),
-# $$  
-# where:  
-# - $\epsilon$ is the electron energy,  
-# - $\epsilon_m$ is the mean electron energy ($\epsilon_m = \frac{3}{2} T_e$),  
-# - $F_0$ is the normalized electron energy distribution function,  
-# - $x = 1$ corresponds to a Maxwellian distribution, while $x = 2$ corresponds to a Druyvesteyn distribution.  
-# - $c_1 = x \cdot \frac{\Gamma\left(\frac{5}{2} x\right)^{1.5}}{\Gamma\left(\frac{3}{2} x\right)^{2.5}}$  
-# - $c_2 = \cdot \left( \frac{\Gamma\left(\frac{5}{2} x\right)}{\Gamma\left(\frac{3}{2} x\right)} \right)^x$  
+# $$
+# where:
+# - $\epsilon$ is the electron energy,
+# - $\epsilon_m$ is the mean electron energy ($\epsilon_m = \frac{3}{2} T_e$),
+# - $F_0$ is the normalized electron energy distribution function,
+# - $x = 1$ corresponds to a Maxwellian distribution, while $x = 2$ corresponds to a Druyvesteyn distribution.
+# - $c_1 = x \cdot \frac{\Gamma\left(\frac{5}{2} x\right)^{1.5}}{\Gamma\left(\frac{3}{2} x\right)^{2.5}}$
+# - $c_2 = \cdot \left( \frac{\Gamma\left(\frac{5}{2} x\right)}{\Gamma\left(\frac{3}{2} x\right)} \right)^x$
 #
-# In Cantera, the electron energy probability function is defined as $F(\epsilon) = f(\epsilon) \sqrt{\epsilon}$. The generalized form of the electron energy probability function for isotropic velocity distributions is:  
+# In Cantera, the electron energy probability function is defined as $F(\epsilon) = f(\epsilon) \sqrt{\epsilon}$. The generalized form of the electron energy probability function for isotropic velocity distributions is:
 # $$
 # F(\epsilon) = c_1 \frac{1}{\epsilon_m^{3/2}}
 #          \exp \left(-c_2 \left(\frac{\epsilon}{\epsilon_m}\right)^x \right).
-# $$  
+# $$
 #
-# ### Example YAML Definition  
+# #### Example YAML Definition
 #
 # ```yaml
 # - name: isotropic-electron-energy-plasma
@@ -63,42 +50,48 @@
 #                     18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0]
 # ```
 #
-# ## Anisotropic velocity
+# ### Anisotropic velocity
 # Two-term approximation method is a good approximation. Cantera provide interfaces for user to input the energy distribution with function `setDiscretizedElectronEnergyDist()` or specify in a YAML file.
 #
 #
 #
 # For more details, see the [Cantera PlasmaPhase documentation](https://cantera.org/dev/cxx/d5/dd7/classCantera_1_1PlasmaPhase.html).
 
-# ## Why plasma phase in Cantera?
+# %% [markdown]
+# ### Why plasma phase in Cantera?
 # * Cantera has better reaction data management
 # * Cantera has better kinetics, thermodynamic, and transport integration
 # * Plasma assisted combustion - intersection of plasma and combustion
 
+# %%
 import cantera as ct
 import numpy as np
 import matplotlib.pyplot as plt
 
-# ### Define the plasma phase 
+# %% [markdown]
+# #### Define the plasma phase
 
+# %%
 plasma = ct.Solution('../inputs/oxygen-plasma.yaml', 'isotropic-electron-energy-plasma', transport_model=None)
 
-# ### Plot the original EEDF
+# %% [markdown]
+# #### Plot the original EEDF
 
-# +
-plt.plot(plasma.electron_energy_levels, 
+# %%
+plt.plot(plasma.electron_energy_levels,
          plasma.electron_energy_distribution * np.sqrt(plasma.electron_energy_levels),
          lw=2, marker='s', markersize=4, label='Mean Electron Energy = 2 eV')
 
 # Labels and legend
 plt.xlabel('Electron Energy [eV]')
 plt.ylabel('Distribution Function [1/eV]')
-# -
 
-# ### Adjust the electron energy distribution function
+# %% [markdown]
+# #### Adjust the electron energy distribution function
 # * mean electron energy
 # * energy grid
 
+# %%
 plasma.mean_electron_energy = 5.0
 plasma.isotropic_shape_factor = 2.0
 plasma.electron_energy_levels = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0,
@@ -106,21 +99,22 @@ plasma.electron_energy_levels = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.
                     10.0, 11.0, 12.0, 13.0, 14.0, 15.0, 16.0, 17.0,
                     18.0, 19.0, 20.0, 21.0, 22.0, 23.0, 24.0]
 
-# ### Plot the adjusted EEDF
+# %% [markdown]
+# #### Plot the adjusted EEDF
 
-# +
-plt.plot(plasma.electron_energy_levels, 
+# %%
+plt.plot(plasma.electron_energy_levels,
         plasma.electron_energy_distribution * np.sqrt(plasma.electron_energy_levels),
         lw=2, marker='s', markersize=4, label='Mean Electron Energy = 2 eV')
 
 # Labels and legend
 plt.xlabel('Electron Energy [eV]')
 plt.ylabel('Distribution Function [1/eV]')
-# -
 
-# # Electron Collision Plasma Reaction
+# %% [markdown]
+# ## Electron Collision Plasma Reaction
 #
-# <img src="../images/plasma-reactions.png" alt="Plasma Reactions" width="600" height="400">
+# <img src="https://github.com/Cantera/workshop-materials/blob/ncm-2025/ncm-2025/images/plasma-reactions.png?raw=true" alt="Plasma Reactions" width="600" height="400" style="750px; background: white; border:5px solid white">
 #
 # **Image from:** Gerhard, C., Viöl, W., & Wieneke, S. (2016). *Plasma Science and Technology: Progress in Physical States and Chemical Reactions, 1.*
 #
@@ -195,57 +189,67 @@ plt.ylabel('Distribution Function [1/eV]')
 # ```
 #
 
-# ### Check reaction equation
+# %% [markdown]
+# #### Check reaction equation
 
+# %%
 plasma.reaction(10)
 
-# ### Check reaction rate constant
+# %% [markdown]
+# #### Check reaction rate constant
 
+# %%
 plasma.forward_rate_constants[10]
 
-# ### Check ECPR cross sections
+# %% [markdown]
+# #### Check ECPR cross sections
 
-# +
+# %%
 reaction = plasma.reaction(10)
 plt.plot(reaction.rate.energy_levels, reaction.rate.cross_sections, lw=2, marker='s', markersize=4)
 
 # Labels and legend
 plt.xlabel('Electron Energy [eV]')
 plt.ylabel('Cross Section [m²]')
-# -
 
-# # Plasma Properties Dependent on Electron Collision Plasma Reactions  
+# %% [markdown]
+# ## Plasma Properties Dependent on Electron Collision Plasma Reactions
 #
-# Plasma properties, such as the electron energy loss coefficient, depend on electron collision plasma reactions (ECPR). The **Plasma Phase** can now utilize ECPR data to calculate these properties.  
+# Plasma properties, such as the electron energy loss coefficient, depend on electron collision plasma reactions (ECPR). The **Plasma Phase** can now utilize ECPR data to calculate these properties.
 #
-# In an ECPR, a neutral particle can gain kinetic energy through collisions, while the electron loses energy accordingly (excluding inelastic energy transfers such as excitation). For each ECPR in a plasma, the **elastic electron energy loss coefficient** (eV·m³/s) is given by:  
+# In an ECPR, a neutral particle can gain kinetic energy through collisions, while the electron loses energy accordingly (excluding inelastic energy transfers such as excitation). For each ECPR in a plasma, the **elastic electron energy loss coefficient** (eV·m³/s) is given by:
 # $$
 #      K_k = \frac{2 m_e}{m_k} \sqrt{\frac{2 e}{m_e}} \int_0^{\infty} \sigma_k
 #            \epsilon^2 \left( F_0 + \frac{k_B T}{e}
 #            \frac{\partial F_0}{\partial \epsilon} \right) d \epsilon,
-# $$  
-# where:  
-# - $m_e$ [kg] is the electron mass,  
-# - $\epsilon$ [V] is the electron energy,  
-# - $\sigma_k$ [m²] is the reaction collision cross-section,  
-# - $F_0$ [V\(^{-3/2}\)] is the normalized electron energy distribution function.  
+# $$
+# where:
+# - $m_e$ [kg] is the electron mass,
+# - $\epsilon$ [V] is the electron energy,
+# - $\sigma_k$ [m²] is the reaction collision cross-section,
+# - $F_0$ [V\(^{-3/2}\)] is the normalized electron energy distribution function.
 #
-# The total **elastic power loss** (J/s/m³) is given by:  
+# The total **elastic power loss** (J/s/m³) is given by:
 # $$
 #      P_k = N_A N_A C_e e \sum_k C_k K_k,
 # $$
-# where:  
-# - $C_k$ and $C_e$ are the concentrations (kmol/m³) of the target species and electrons, respectively,  
+# where:
+# - $C_k$ and $C_e$ are the concentrations (kmol/m³) of the target species and electrons, respectively,
 # - $K_k$ is the elastic electron energy loss coefficient (eV·m³/s).
 
-# ### Define plasma composition
+# %% [markdown]
+# #### Define plasma composition
 
+# %%
 plasma.TPX = 300, ct.one_atm, "O2:1, e:1e-6"
 
-# ### Get plasma properties
+# %% [markdown]
+# #### Get plasma properties
 # * electron temperature
 # * elastic power loss (electron to molecules)
 
+# %%
 plasma.Te
 
+# %%
 plasma.elastic_power_loss
