@@ -1,28 +1,106 @@
-# NCM-2025-materials
+# Cantera Workshop Materials
 
-Materials for the Cantera workshop held in conjunction with the 2025 US National Combustion Meeting.
+This repository includes notebooks and other materials used at Cantera workshop associated with the 2025 NCM workshop (March 16th, Boston, MA), please make sure you have changed to the subfolder `ncm-2025` within the repository.
 
-## Working with Jupytext Markdown Notebooks
+## Schedule
 
-The notebooks in this directory use the Jupytext extension to enable storing markdown text within Git-friendly annotated Python `.py` files rather than within `.ipynb` format files that tend to record a lot of spurious changes and create diffs that are hard to read.
+| Start Time (EST) | End Time | Session      |
+|------------------|----------|--------------|
+| 9:00  | 12:00 | Introduction & Tutorials (including a break) |
+| 12:00 | 13:30 | *Lunch break (not provided)*           |
+| 13:30 | 14:30 | Lighting Talks (contributions welcome)  |
+| 14:30 | 15:00 | Contributing to Cantera                      |
+| 15:00 | 15:30 | *Break*       |
+| 15:30 | 18:00 | What's new in Cantera (including a break)  |
 
-For more about using Jupytext, see <https://blog.jupyter.org/the-jupytext-menu-is-back-3e6212e8c090>.
+## Installation Instructions
 
-### Jupyter Lab
+Please choose from the following list:
 
-When you first check out this repository, you can open these notebooks in Jupyter by right clicking in the Jupyter file browser and selecting `Open With -> Jupytext Notebook` from the context menu.
-As you make changes, both the `.py` and paired `.ipynb` file will be updated. When you want to commit your changes, only the `.py` should be added.
+* [I do not have Python installed on my computer](#i-do-not-have-python-installed-on-my-computer)
+* I already have Python installed on my computer
+  * [I installed Python with Anaconda or Miniconda](#i-installed-python-with-anaconda-or-miniconda)
+  * [I installed Python from https://python.org](#i-installed-python-from-the-official-site)
 
-To create a new paired notebook, create a notebook as usual in the `.ipynb` format. A paired `.py` file should be created automatically based on settings in `pyproject.toml`.
+### I do not have Python installed on my computer
 
-### VS Code
+If you do not have Python or Cantera installed on your computer, we recommend that you use Anaconda or Miniconda to install Python. Anaconda and Miniconda are Python distributions that include the cross-platform `conda` package manager. This provides a consistent interface to install Python packages (including Cantera) whether you're running Windows, macOS, or Linux. The difference between Anaconda and Miniconda is that Anaconda includes a few hundred of the most commonly used Python packages in the installer along with Python and `conda`, while Miniconda includes just Python and `conda`. However, all the packages included with Anaconda are available to be installed within Miniconda.
 
-Make sure that you install the _Python_ and _Jupyter_ extensions.
+* [Anaconda installer](https://www.anaconda.com/distribution/)
+* [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html)
 
-Once extensions are installed, you can execute notebooks in VS Code by opening the regular Python files, where the percent `# %%` annotation breaks the code into code cells. You can step through the notebook by hitting `Shift+Return`, which opens an interactive window displaying results. You can also right click on a file in the file browser and select `Run Current File in Interactive Window`, which will execute the entire script, and render both markdown and code output.
+Make sure to download the Python 3 version of the installer! Once you've installed Anaconda or Miniconda, open a terminal (on Linux or macOS) or the Anaconda Prompt (on Windows) and type
 
-In order to display expanded code blocks in interactive windows, open `Preferences: Open Settings (UI)`, select the _User_ tab, navigate to `Features` and `Notebook`, and switch `Interactive Window: Collapse Cell Input Code` to `never`.
+```console
+conda update -n base conda
+```
 
-### Spyder
+If this updates your version of conda, restart your terminal so that changes to your environment can take effect.
+Then, follow the instructions directly below ("I installed Python with Anaconda or Miniconda") to install Cantera.
 
-Similar to VS Code, the Spyder IDE allows for stepping through a `.py` file using `Shift+Return`. Markdown output is, however, not rendered.
+### I installed Python with Anaconda or Miniconda
+
+Great! Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "Clone or Download" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
+
+![Download a Zip of the repository](./images/download-repo-zip.png)
+
+Once the zip file finishes downloading, unzip it and remember where the files are.
+
+Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the `cd` command to change into the directory with the files you just cloned/unzipped. For instance, if you unzipped the files into your `Downloads` folder, then the command will look like:
+
+```console
+cd Downloads/workshop-materials
+```
+
+Now you need to create a conda environment with all of the Python packages you will need.
+
+```console
+conda env create -f environment.yml
+```
+
+Finally, to run the files for the Workshop, in the same Anaconda Prompt or terminal window, activate the newly created environment and start a Jupyter Notebook server by typing
+
+```console
+conda activate ct-workshop
+jupyter notebook
+```
+
+This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
+
+Hooray! You're all set! See you on 25 August!
+
+### I installed Python from the official site
+
+If you installed Python from <https://python.org>, you will need to follow the [operating system-specific instructions](https://cantera.org/install) for your platform to install Cantera.
+
+If you're on macOS, the instructions have you use Miniconda to install Cantera anyways, so you should head on up to the [I do not have Python installed on my computer](#i-do-not-have-python-installed-on-my-computer) instructions.
+
+If you're on Windows, we do have a separate installer for the python.org version of Python. Head over to the Cantera website and check out the appropriate instructions: [Windows](https://cantera.org/install/windows-install.html)
+
+Once you've got Cantera installed, you'll need to install a few other dependencies. Open a command prompt and type:
+
+```console
+py -m pip install pandas matplotlib notebook scipy
+```
+
+Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "Clone or Download" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
+
+![Download a Zip of the repository](./images/download-repo-zip.png)
+
+Once the zip file finishes downloading, unzip it and remember where the files are.
+
+Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the `cd` command to change into the directory with the files you just cloned/unzipped. For instance, if you unzipped the files into your `Downloads` folder, then the command will look like:
+
+```console
+cd Downloads/workshop-materials
+```
+
+Finally, to run the files for the Workshop start a Jupyter Notebook server by typing:
+
+```console
+jupyter notebook
+```
+
+This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
+
+Hooray! You're all set! See you on March 16th!
