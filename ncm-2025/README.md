@@ -78,6 +78,7 @@ Finally, to run the files for the Workshop, in the same Anaconda Prompt or termi
 
 ```console
 conda activate ct-workshop
+jupytext --to ipynb *.py
 jupyter lab
 ```
 
@@ -92,7 +93,7 @@ If you installed Python from <https://python.org> or similar, you will need to f
 Once you've got Cantera installed, you'll need to install a few other dependencies. Open a command prompt and type (`py` should be replaced by `python` on Linux or macOS):
 
 ```console
-py -m pip install pandas matplotlib scipy jupyterlab
+py -m pip install pandas matplotlib scipy jupyterlab jupytext
 ```
 
 Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the `cd` command to change into the directory with the files you just cloned/unzipped. For instance, if you unzipped the files into your `Downloads` folder, then the command will look like:
@@ -104,6 +105,7 @@ cd Downloads/workshop-materials/ncm-2025
 Finally, to run the files for the Workshop start a Jupyter Lab server by typing:
 
 ```console
+jupytext --to ipynb *.py
 jupyter lab
 ```
 
