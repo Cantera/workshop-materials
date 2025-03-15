@@ -4,30 +4,41 @@ This repository includes notebooks and other materials used at Cantera workshop 
 
 ## Schedule
 
-| Start Time (EST) | End Time | Session      |
-|------------------|----------|--------------|
+| Start Time (EST) | End Time | Session                        |
+|------------------|----------|--------------------------------|
 | 9:00  | 12:00 | Introduction & Tutorials (including a break) |
-| 12:00 | 13:30 | *Lunch break (not provided)*           |
-| 13:30 | 14:30 | Lighting Talks (contributions welcome)  |
-| 14:30 | 15:00 | Contributing to Cantera                      |
-| 15:00 | 15:30 | *Break*       |
-| 15:30 | 18:00 | What's new in Cantera (including a break)  |
+| 12:00 | 12:30 | Lightning Talks, Part I                      |
+| 12:30 | 13:30 | *Lunch break (provided)*                     |
+| 13:30 | 14:30 | Lighting Talks, Part II                      |
+| 14:30 | 15:00 | Contributing to Cantera (panel discussion)   |
+| 15:00 | 15:30 | *Break (Tea)*                                |
+| 15:30 | 18:00 | What's new in Cantera (including a break)    |
+
+## Overview
+
+In this workshop, we will engage in hands-on coding tutorials and exercises using **Cantera**, an open-source suite for thermodynamics, kinetics, and transport processes. Most exercises will be conducted in **Python**, which provides the most complete and user-friendly interface for working with Cantera.
+
+To ensure a smooth experience, please review the following requirements and setup instructions before attending.
+
+### **📌 Workshop Requirements**
+- A **laptop** with **Python and Cantera installed** (installation guide below).
+- A text editor or an IDE (**Jupyter Lab** is recommended, but **VS Code, Spyder,** or **PyCharm** can also be used).
+- **Basic knowledge of Python** (recommended but not required).
+- An interest in **thermodynamics, chemical kinetics, and combustion modeling**!
 
 ## Installation Instructions
 
-Please choose from the following list:
+Installation involves four steps:
+- [Install Python](#1️⃣-install-python)
+- [Download Workshop Materials](#2️⃣-download-workshop-materials)
+- [Install Cantera](#3️⃣-install-cantera) and Jupyter Lab
 
-* [I do not have Python installed on my computer](#i-do-not-have-python-installed-on-my-computer)
-* I already have Python installed on my computer
-  * [I installed Python with Anaconda or Miniconda](#i-installed-python-with-anaconda-or-miniconda)
-  * [I installed Python from https://python.org](#i-installed-python-from-the-official-site)
-
-### I do not have Python installed on my computer
+### **1️⃣ Install Python**
 
 If you do not have Python or Cantera installed on your computer, we recommend that you use Anaconda or Miniconda to install Python. Anaconda and Miniconda are Python distributions that include the cross-platform `conda` package manager. This provides a consistent interface to install Python packages (including Cantera) whether you're running Windows, macOS, or Linux. The difference between Anaconda and Miniconda is that Anaconda includes a few hundred of the most commonly used Python packages in the installer along with Python and `conda`, while Miniconda includes just Python and `conda`. However, all the packages included with Anaconda are available to be installed within Miniconda.
 
-* [Anaconda installer](https://www.anaconda.com/distribution/)
-* [Miniconda installer](https://docs.conda.io/en/latest/miniconda.html)
+* [Anaconda installer](https://www.anaconda.com/download/)
+* [Miniconda installer](https://www.anaconda.com/docs/getting-started/miniconda/install)
 
 Make sure to download the Python 3 version of the installer! Once you've installed Anaconda or Miniconda, open a terminal (on Linux or macOS) or the Anaconda Prompt (on Windows) and type
 
@@ -36,9 +47,8 @@ conda update -n base conda
 ```
 
 If this updates your version of conda, restart your terminal so that changes to your environment can take effect.
-Then, follow the instructions directly below ("I installed Python with Anaconda or Miniconda") to install Cantera.
 
-### I installed Python with Anaconda or Miniconda
+### **2️⃣ Download Workshop Materials**
 
 Great! Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "Clone or Download" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
 
@@ -46,10 +56,16 @@ Great! Now, you need to get the materials for the workshop. Head to <https://git
 
 Once the zip file finishes downloading, unzip it and remember where the files are.
 
+### **3️⃣ Install Cantera**
+
+Depending on how you installed **Python** there are two options: **Anaconda/Miniconda** or starting from a generic **Python** installation.
+
+#### I installed Python with Anaconda or Miniconda
+
 Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the `cd` command to change into the directory with the files you just cloned/unzipped. For instance, if you unzipped the files into your `Downloads` folder, then the command will look like:
 
 ```console
-cd Downloads/workshop-materials
+cd Downloads/workshop-materials/ncm-2025
 ```
 
 Now you need to create a conda environment with all of the Python packages you will need.
@@ -58,47 +74,37 @@ Now you need to create a conda environment with all of the Python packages you w
 conda env create -f environment.yml
 ```
 
-Finally, to run the files for the Workshop, in the same Anaconda Prompt or terminal window, activate the newly created environment and start a Jupyter Notebook server by typing
+Finally, to run the files for the Workshop, in the same Anaconda Prompt or terminal window, activate the newly created environment and start a Jupyter Lab server by typing
 
 ```console
 conda activate ct-workshop
-jupyter notebook
+jupyter lab
 ```
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-Hooray! You're all set! See you on 25 August!
+Hooray! You're all set! See you on March 16th!
 
-### I installed Python from the official site
+#### I have a preinstalled Python version
 
-If you installed Python from <https://python.org>, you will need to follow the [operating system-specific instructions](https://cantera.org/install) for your platform to install Cantera.
+If you installed Python from <https://python.org> or similar, you will need to follow the [operating system-specific instructions](https://cantera.org/install) for your platform to install Cantera.
 
-If you're on macOS, the instructions have you use Miniconda to install Cantera anyways, so you should head on up to the [I do not have Python installed on my computer](#i-do-not-have-python-installed-on-my-computer) instructions.
-
-If you're on Windows, we do have a separate installer for the python.org version of Python. Head over to the Cantera website and check out the appropriate instructions: [Windows](https://cantera.org/install/windows-install.html)
-
-Once you've got Cantera installed, you'll need to install a few other dependencies. Open a command prompt and type:
+Once you've got Cantera installed, you'll need to install a few other dependencies. Open a command prompt and type (`py` should be replaced by `python` on Linux or macOS):
 
 ```console
-py -m pip install pandas matplotlib notebook scipy
+py -m pip install pandas matplotlib scipy jupyterlab
 ```
-
-Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "Clone or Download" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
-
-![Download a Zip of the repository](./images/download-repo-zip.png)
-
-Once the zip file finishes downloading, unzip it and remember where the files are.
 
 Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the `cd` command to change into the directory with the files you just cloned/unzipped. For instance, if you unzipped the files into your `Downloads` folder, then the command will look like:
 
 ```console
-cd Downloads/workshop-materials
+cd Downloads/workshop-materials/ncm-2025
 ```
 
-Finally, to run the files for the Workshop start a Jupyter Notebook server by typing:
+Finally, to run the files for the Workshop start a Jupyter Lab server by typing:
 
 ```console
-jupyter notebook
+jupyter lab
 ```
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
