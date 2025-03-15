@@ -7,6 +7,7 @@ dependencies:
   - jupytext
   - scipy
   - matplotlib
-  - notebook
+  - jupyterlab
   - pandas
   - ipympl
+  - python-graphviz

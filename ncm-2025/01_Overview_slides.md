@@ -2,22 +2,27 @@
 
 ## Jupyter Notebooks
 
-The examples are available at https://github.com/Cantera/workshop-materials/tree/acs-2022
+The examples are available at https://github.com/Cantera/workshop-materials/tree/ncm-2025/ncm-2025
 
 # 2025 National Combustion Meeting | Cantera Workshop
-## March 16th, 2025
-## Richard West, Raymond Speth
+## Date: March 16th, 2025
+## Organizers: Richard West & Raymond Speth
+
+**Northeastern University**
+Shillman Hall, Room 220
+115 Forsyth St, Boston, MA 02115
 
 # Agenda
 
-| Start Time (EST) | End Time | Session      |
-|------------------|----------|--------------|
+| Start Time (EST) | End Time | Session                        |
+|------------------|----------|--------------------------------|
 | 9:00  | 12:00 | Introduction & Tutorials (including a break) |
-| 12:00 | 13:30 | *Lunch break (not provided)*           |
-| 13:30 | 14:30 | Lighting Talks (contributions welcome)  |
-| 14:30 | 15:00 | Contributing to Cantera                      |
-| 15:00 | 15:30 | *Break*       |
-| 15:30 | 18:00 | What's new in Cantera (including a break)  |
+| 12:00 | 12:30 | Lightning Talks, Part I                      |
+| 12:30 | 13:30 | *Lunch break (provided)*                     |
+| 13:30 | 14:30 | Lighting Talks, Part II                      |
+| 14:30 | 15:00 | Contributing to Cantera (panel discussion)   |
+| 15:00 | 15:30 | *Break (Tea)*                                |
+| 15:30 | 18:00 | What's new in Cantera (including a break)    |
 
 # Overview of Cantera
 
@@ -25,23 +30,23 @@ The examples are available at https://github.com/Cantera/workshop-materials/tree
 
 ## Property Calculator
 
-  * Set state of your phase object(s)
-  * Evaluate individual properties via function calls.
+* Set state of your phase object(s)
+* Evaluate individual properties via function calls.
 
 ## "Canonical Simulations"
 
-  * Cantera comes pre-packaged with a number of simulation tools and examples for a limited set of 'classic' problems.
-      * 0-D reactors
-      * 1-D flames, flows, and reactors
-  * These models take user inputs for intial/inlet conditions, reactor geometry, etc.
-  * The model sets the state of Cantera objects and evaluating properties to provide terms required to solve/integrate conservation equations.
+* Cantera comes pre-packaged with a number of simulation tools and examples for a limited set of 'classic' problems.
+  * 0-D reactors
+  * 1-D flames, flows, and reactors
+* These models take user inputs for intial/inlet conditions, reactor geometry, etc.
+* The model sets the state of Cantera objects and evaluating properties to provide terms required to solve/integrate conservation equations.
 
 ## Property evaluation for in-house simulation code
 
-  * For more complex or novel simulations, the user writes their own simulation code.
-      * Establishes a solution vector to describe the system state
-      * Defines and codes conservation equations
-      * Writes calls to Cantera to evaluate terms in the conservation equations
+* For more complex or novel simulations, the user writes their own simulation code.
+  * Establishes a solution vector to describe the system state
+  * Defines and codes conservation equations
+  * Writes calls to Cantera to evaluate terms in the conservation equations
 
 # Application Areas
 
@@ -59,20 +64,28 @@ The examples are available at https://github.com/Cantera/workshop-materials/tree
 
 Installation options are provided on the website: https://cantera.org/install/
 
-## Python
+> [!TIP]
+> Additional instructions are posted in the [README.md](README.md) file.
 
-- Easiest pathway is via Conda
-```
-conda create --name ct-env --channel conda-forge cantera ipython matplotlib jupyter
-```
-(to make an environment called `ct-env` (you can choose whatever environment name you want, though). Then in a python command window, type
-```
-conda activate ct-env
-```
-and you can begin using Cantera!
-- Can now also install via `pip`
+## Cantera Python API
 
-## Other approaches
+### Conda
+
+The easiest and recommended way (if you have Anaconda/Miniconda installed).
+
+- [Installation instructions](https://cantera.org/stable/install/conda.html#installing-with-conda)
+- **Additional Conda packages required:**
+  `jupyterlab`, `matplotlib`, `pandas`, `ipympl`, `python-graphviz`, `scipy`, `jupytext`
+
+### Pip
+
+Using Python’s package installer, available in most Python environments.
+
+- [Installation instructions](https://cantera.org/stable/install/pip.html#installing-with-pip)
+- **Additional Pip packages required:**
+  `jupyterlab`, `matplotlib`, `pandas`, `ipympl`, `graphviz`, `scipy`, `jupytext`
+
+### Other approaches
 
 - Ubuntu users can install the cantera-python3 package from the Cantera PPA.
 - Fedora / Enterprise Linux users can install python3-cantera using dnf.
