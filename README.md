@@ -3,12 +3,11 @@
 This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
 
 > **Note**
-> **If you are participating in the Fall 2022 ACS workshop DO THIS FIRST</strong>**
+> **If you are participating in the 2025 NCM workshop DO THIS FIRST</strong>**
 
-
-Please switch the branch from `main` to `acs-2022`:
+Please switch the branch from `main` to `ncm-2025`:
 - Click on the button that says `main` in the upper left corner.
-- A drop-down will appear.  Choose the `acs-2022` option:
+- A drop-down will appear.  Choose the `ncm-2025` option:
 <img src="./images/SwitchBranch.png" alt="Image showing how to switch branches." style="width: 350px;"/>
 
 <!-- ## Installation Instructions
