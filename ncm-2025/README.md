@@ -122,6 +122,6 @@ jupyter lab
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
 > [!NOTE]
-> Alternatively, you can open Jupyter notebooks in VS Code or Spyder. For Spyder, the _spyder-notebook_ plugin is required.
+> Alternatively, you can open Jupyter notebooks in VS Code or Spyder. For VS Code, you will need the _Jupyter_ extension. For Spyder, the _spyder-notebook_ plugin is required.
 
 Hooray! You're all set! See you on March 16th!
