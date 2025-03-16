@@ -2,15 +2,8 @@
 
 This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
 
-> **Note**
-> **If you are participating in the 2025 NCM workshop DO THIS FIRST</strong>**
-
-Please switch the branch from `main` to `ncm-2025`:
-- Click on the button that says `main` in the upper left corner.
-- A drop-down will appear.  Choose the `ncm-2025` option:
-<img src="./images/SwitchBranch.png" alt="Image showing how to switch branches." style="width: 350px;"/>
-
-Once you have switched to the `ncm-2025` branch, workshop material can be found within the `ncm-2025` folder.
+> [!NOTE]
+> If you're attending the **2025 NCM Workshop**, you can find all relevant materials in the `ncm-2025` subfolder.
 
 <!-- ## Installation Instructions
 
