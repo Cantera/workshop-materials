@@ -43,22 +43,22 @@ Shillman Hall, Room 220
 
 ## Property evaluation for in-house simulation code
 
-* For more complex or novel simulations, the user writes their own simulation code.
-  * Establishes a solution vector to describe the system state
-  * Defines and codes conservation equations
-  * Writes calls to Cantera to evaluate terms in the conservation equations
+For more complex or novel simulations, the user writes their own simulation code.
+* Establishes a solution vector to describe the system state
+* Defines and codes conservation equations
+* Writes calls to Cantera to evaluate terms in the conservation equations
 
 # Application Areas
 
 ![Apps.png](images/Apps.png)
 
-* Cantera can be used in a wide variety of applications
-  * Combustion
-  * Electrochemistry
-  * Surface chemistry
-  * Non-ideal equations of state
+Cantera can be used in a wide variety of applications
+* Combustion
+* Electrochemistry
+* Surface chemistry
+* Non-ideal equations of state
 
-* Cantera's strength is that it is (relatively) easy to add new functionality
+Cantera's strength is that it is (relatively) easy to add new functionality
 
 # Installation
 
@@ -96,11 +96,10 @@ Using Python’s package installer, available in most Python environments.
 
 # Examples!
 
-* Examples are available from the Cantera documentation in several formats: https://cantera.org/examples/index.html
-  * Python scripts: https://cantera.org/examples/python/index.html
-  * Jupyter Notebooks: https://cantera.org/examples/jupyter/index.html
-  * Matlab scripts: https://cantera.org/examples/matlab/index.html
-  * Simple C++ examples: https://cantera.org/tutorials/cxx-guide/simple-example.html
+Examples are available from the Cantera documentation in several formats: https://cantera.org/examples/index.html
+* Python examples: https://cantera.org/examples/python/index.html
+* (Experimental) Matlab examples: https://cantera.org/examples/matlab/index.html
+* Simple C++ examples: https://cantera.org/tutorials/cxx-guide/simple-example.html
 
 # Community Resources
 
@@ -118,7 +117,7 @@ Link: https://groups.google.com/forum/#!forum/cantera-users
 ## Documentation
 
 * Documentation at https://cantera.org/documentation
-* Has examples and API documentation (we'll come back to this later)
+* Has examples and API documentation
 
 ## GitHub
 
@@ -129,9 +128,12 @@ Link: https://groups.google.com/forum/#!forum/cantera-users
 
 ## Other
 
+> [!NOTE]
+> If you use Cantera for your research, please cite the project using:
+>
+> David G. Goodwin, Harry K. Moffat, Ingmar Schoegl, Raymond L. Speth, and Bryan W. Weber. Cantera: An object-oriented software toolkit for chemical kinetics, thermodynamics, and transport processes. https://www.cantera.org, 2024. Version 3.1.0. doi:10.5281/zenodo.14455267
+
 * Cantera is a fiscally-sponsored project under NumFOCUS
 * NumFOCUS is a non-profit umbrella organization that provides support for open-source scientific software
 * We would really appreciate your support for Cantera!
 [![Powered by NumFOCUS](https://img.shields.io/badge/powered%20by-NumFOCUS-orange.svg?style=flat&colorA=E1523D&colorB=007D8A)](https://numfocus.salsalabs.org/donate-to-cantera/index.html)
-* Plus, we have really cool shirts, mugs, hats, water bottles, onesies, and more!
-<img src='https://chart.googleapis.com/chart?cht=qr&chl=https%3A%2F%2Fshop.spreadshirt.com%2Fnumfocus%2Fcantera%2Bofficial%2Blogo%3Fq%3DI1019678777&chs=300x300&choe=UTF-8&chld=L|2' alt='Donate to Cantera!'>

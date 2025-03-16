@@ -32,7 +32,7 @@ Installation involves four steps:
 - [Install Python](#1️⃣-install-python)
 - [Download Workshop Materials](#2️⃣-download-workshop-materials)
 - [Install Cantera](#3️⃣-install-cantera) and Jupyter Lab
-- [Generate Jupyter Notebooks](#3️⃣-generate-jupyter-notebooks)
+- [Generate Jupyter Notebooks](#4️⃣-generate-jupyter-notebooks)
 
 ### **1️⃣ Install Python**
 
@@ -60,6 +60,9 @@ Once the zip file finishes downloading, unzip it and remember where the files ar
 ### **3️⃣ Install Cantera**
 
 Depending on how you installed **Python** there are two options: **Anaconda/Miniconda** or starting from a generic **Python** installation.
+
+> [!TIP]
+> Detailed instructions can be found in the [Cantera documentation](https://cantera.org/stable/install)
 
 #### I installed Python with Anaconda or Miniconda
 
