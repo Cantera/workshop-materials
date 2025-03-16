@@ -35,8 +35,6 @@ print(f"Using Cantera version {ct.__version__}")
 # %%
 # Define the gas mixture and kinetics
 gas = ct.Solution('../inputs/seiser.yaml')
-# If this doesn't work, probably because you're using Canera 2.5
-# replace 'data/seiser.yaml' with 'data/seiser.2.5.yaml'
 gas()
 
 # %% [markdown]
@@ -121,7 +119,7 @@ print(f"Computed Ignition Delay: {tau:.3e} seconds.")
 fig, ax = plt.subplots()
 ax.plot(time_history.t, time_history(reference_species).Y, "-o")
 ax.set_xlabel("Time (s)")
-ax.set_ylabel("$Y_{OH}$");
+ax.set_ylabel("$Y_{OH}$")
 
 # %% [markdown]
 # ### Illustration : NTC behavior
@@ -197,12 +195,4 @@ ticks = ax.get_xticks()
 ax2.set_xticks(ticks)
 ax2.set_xticklabels((1000/ticks).round(1))
 ax2.set_xlim(ax.get_xlim())
-ax2.set_xlabel(r'Temperature: $T(K)$');
-
-# %% [markdown]
-# ### Challenge question: How does EGR impact ignition delay?
-# Most modern internal combustion engines use exhaust gas recirculation (EGR) as a form of emissions control to reduce the formation of NO<sub>x</sub>. EGR works by recirculating some of the expanded and cooled combustion products back into the fuel/air charge in the cylinder, reducing cylinder temperatures and subsequently reducing the NO<sub>x</sub> emissions.
-#
-# For this challenge, you are tasked to evaluate the effect of increasing EGR dilution on the ignition delay for the n-heptane mixture studied earlier. Be sure to carefully consider how to properly model the exhaust products that you will introduce into the intake charge.
-
-# %%
+ax2.set_xlabel(r'Temperature: $T(K)$')
