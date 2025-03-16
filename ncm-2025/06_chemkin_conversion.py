@@ -1,17 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.16.7
-#   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
-# ---
-
 # %% [markdown]
 # ## Converting from Chemkin
 
@@ -78,7 +64,7 @@
 # Looking at the input file at line 73, we find the end of the `SPECIES` section and the start of the `REACTIONS` section:
 #
 # ```text
-# 70  C6H5      ! phenyl        
+# 70  C6H5      ! phenyl
 # 71  AR        N2
 # 72  END
 # 73  REACTIONS          BASE M=N2

@@ -1,17 +1,3 @@
-# ---
-# jupyter:
-#   jupytext:
-#     text_representation:
-#       extension: .py
-#       format_name: percent
-#       format_version: '1.3'
-#       jupytext_version: 1.16.7
-#   kernelspec:
-#     display_name: Python 3 (ipykernel)
-#     language: python
-#     name: python3
-# ---
-
 # %%
 import cantera as ct
 import numpy as np
@@ -69,7 +55,7 @@ plt.rcParams['lines.linewidth'] = 2
 # %%
 
 # %% [markdown]
-# Among these is the reaction 
+# Among these is the reaction
 #
 # $$\text{CH}_3 + \text{M} <=> \text{CH} + \text{H}_2 + \text{M}$$
 #

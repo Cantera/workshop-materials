@@ -2,7 +2,7 @@
 
 ## Jupyter Notebooks
 
-The examples are available at https://github.com/Cantera/workshop-materials/tree/ncm-2025/ncm-2025
+The examples are available at https://github.com/Cantera/workshop-materials/blob/main/ncm-2025/
 
 # 2025 National Combustion Meeting | Cantera Workshop
 ## Date: March 16th, 2025

@@ -32,7 +32,7 @@ Installation involves four steps:
 - [Install Python](#1️⃣-install-python)
 - [Download Workshop Materials](#2️⃣-download-workshop-materials)
 - [Install Cantera](#3️⃣-install-cantera) and Jupyter Lab
-- [Generate Jupyter Notebooks](#4️⃣-generate-jupyter-notebooks)
+- [Launch Jupyter Notebooks](#4️⃣-launch-jupyter-notebooks)
 
 ### **1️⃣ Install Python**
 
@@ -51,7 +51,12 @@ If this updates your version of conda, restart your terminal so that changes to 
 
 ### **2️⃣ Download Workshop Materials**
 
-Great! Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "< > Code" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
+Great! Now, you need to get the materials for the workshop.
+
+> [!TIP]
+> A zipped version of all workshop files, - included all generated Jupyter notebooks, - can be [downloaded here](https://github.com/Cantera/workshop-materials/releases/tag/ncm-2025-v1).
+
+If you want to clone the repository or download contents directly, head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "< > Code" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
 
 ![Download a Zip of the repository](./images/download-repo-zip.png)
 
@@ -78,15 +83,11 @@ Now you need to create a conda environment with all of the Python packages you w
 conda env create -f environment.yml
 ```
 
-Finally, to run the files for the Workshop, in the same Anaconda Prompt or terminal window, activate the newly created environment and start a Jupyter Lab server by typing
+Finally, to run the files for the Workshop, in the same Anaconda Prompt or terminal window, activate the newly created environment by typing
 
 ```console
 conda activate ct-workshop
-jupytext --to ipynb *.py
-jupyter lab
 ```
-
-This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
 #### I have a preinstalled Python version
 
@@ -104,21 +105,23 @@ Open your terminal (Linux or macOS) or the Anaconda Prompt (Windows) and use the
 cd Downloads/workshop-materials/ncm-2025
 ```
 
+### **4️⃣ Launch Jupyter Notebooks**
+
+This repository stores code in storage-efficient Jupytext format, rather than the Jupyter `.ipynb` format. Depending how you downloaded content, you may have to convert to Jupyter Notebooks, which is done by running the following command.
+
+```Console
+jupytext --to ipynb *.py
+```
+
 Finally, to run the files for the Workshop start a Jupyter Lab server by typing:
 
 ```console
-jupytext --to ipynb *.py
 jupyter lab
 ```
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-### **4️⃣ Generate Jupyter Notebooks**
-
-This repository stores code in storage-efficient Jupytext format. To convert to Jupyter Notebooks, simply run
-
-```Console
-jupytext --to ipynb *.py
-```
+> [!NOTE]
+> Alternatively, you can open Jupyter notebooks in VS Code or Spyder. For Spyder, the _spyder-notebook_ plugin is required.
 
 Hooray! You're all set! See you on March 16th!
