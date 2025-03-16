@@ -2,6 +2,8 @@
 
 This repository has the Jupyter Notebooks and other materials used at Cantera workshops.
 
+The URL of this site is: https://github.com/Cantera/workshop-materials
+
 > [!NOTE]
 > If you're attending the **2025 NCM Workshop**, you can find all relevant materials in the `ncm-2025` subfolder.
 
