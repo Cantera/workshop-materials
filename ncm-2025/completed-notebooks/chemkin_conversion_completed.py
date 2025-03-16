@@ -34,6 +34,7 @@
 #
 
 # %%
+# !ck2yaml --help
 
 # %% [markdown]
 # There is one mandatory argument to `ck2yaml`:
@@ -53,6 +54,7 @@
 # One of the most common problems that users encounter is converting CHEMKIN format input files to Cantera YAML format. Unfortunately, the CHEMKIN interpreter for these files is not very strict about complying with its own standard, so files that appear to work just fine in CHEMKIN require some massaging to work with Cantera. Let's look at one example using `ck2yaml`:
 
 # %%
+# !ck2yaml --input=../inputs/mech_debug/mech.txt --thermo=../inputs/mech_debug/thermo.txt --transport=../inputs/mech_debug/tran.txt --output=mech.yaml
 
 # %% [markdown]
 # ## Fixing REACTIONS error:
@@ -144,6 +146,7 @@
 # Let's use the fixed `mech.txt` and `thermo.txt` files, and supply the `permissive` option to ignore the issue with the transport data:
 
 # %%
+# !ck2yaml --input=../inputs/mech_debug/mech_fixed.txt --thermo=../inputs/mech_debug/thermo_fixed.txt --transport=../inputs/mech_debug/tran.txt --output=mech.yaml --permissive
 
 # %% [markdown]
 # And finally, we have successfully converted the file.
