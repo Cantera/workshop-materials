@@ -32,6 +32,7 @@ Installation involves four steps:
 - [Install Python](#1️⃣-install-python)
 - [Download Workshop Materials](#2️⃣-download-workshop-materials)
 - [Install Cantera](#3️⃣-install-cantera) and Jupyter Lab
+- [Generate Jupyter Notebooks](#3️⃣-generate-jupyter-notebooks)
 
 ### **1️⃣ Install Python**
 
@@ -50,7 +51,7 @@ If this updates your version of conda, restart your terminal so that changes to 
 
 ### **2️⃣ Download Workshop Materials**
 
-Great! Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "Clone or Download" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
+Great! Now, you need to get the materials for the workshop. Head to <https://github.com/Cantera/workshop-materials> (you might already be reading this on that site) and find the "< > Code" button. If you have git installed on your computer, you can clone the repository. If you don't, or don't know what cloning means, don't worry! Click the green button, then click "Download ZIP", as shown in the picture below:
 
 ![Download a Zip of the repository](./images/download-repo-zip.png)
 
@@ -84,8 +85,6 @@ jupyter lab
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
 
-Hooray! You're all set! See you on March 16th!
-
 #### I have a preinstalled Python version
 
 If you installed Python from <https://python.org> or similar, you will need to follow the [operating system-specific instructions](https://cantera.org/install) for your platform to install Cantera.
@@ -110,5 +109,13 @@ jupyter lab
 ```
 
 This should automatically open a page in your web browser that shows you the files for the Workshop. We're going to be working from one of the sub-folders in the zip file.
+
+### **4️⃣ Generate Jupyter Notebooks**
+
+This repository stores code in storage-efficient Jupytext format. To convert to Jupyter Notebooks, simply run
+
+```Console
+jupytext --to ipynb *.py
+```
 
 Hooray! You're all set! See you on March 16th!
