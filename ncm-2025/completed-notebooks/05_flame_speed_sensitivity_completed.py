@@ -9,7 +9,7 @@
 # The figure below illustrates the setup, in a flame-fixed co-ordinate system. The reactants enter with density $\rho_{u}$, temperature $T_{u}$ and speed $S_{u}$. The products exit the flame at speed $S_{b}$, density $\rho_{b}$ and temperature $T_{b}$.
 
 # %% [markdown]
-# <img src="https://github.com/Cantera/workshop-materials/blob/ncm-2025/ncm-2025/images/flameSpeed.png?raw=true" alt="Freely Propagating Flame" style="width: 300px; background: white; border:5px solid white"/>
+# <img src="https://github.com/Cantera/workshop-materials/blob/main/ncm-2025/images/flameSpeed.png?raw=true" alt="Freely Propagating Flame" style="width: 300px; background: white; border:5px solid white"/>
 
 # %% [markdown]
 # #### Import Modules
@@ -95,14 +95,13 @@ ax.set(xlabel='Distance (cm)', ylabel='Temperature (K)');
 # ##### Major species' plot
 
 # %%
-profile = ct.SolutionArray(gas, shape=len(flame.grid), extra={'z': flame.grid*100})
-profile.TPY = flame.T, flame.P, flame.Y.T
+profile = flame.to_array()
 
 f, ax = plt.subplots(1, 1)
-ax.plot(profile.z, profile('CH4').X, label=r'CH$_4$')
-ax.plot(profile.z, profile('O2').X, label=r'O$_2$')
-ax.plot(profile.z, profile('CO2').X, label=r'CO$_2$')
-plt.plot(profile.z, profile('H2O').X, label=r'H$_2$O')
+ax.plot(profile.grid, profile('CH4').X, label=r'CH$_4$')
+ax.plot(profile.grid, profile('O2').X, label=r'O$_2$')
+ax.plot(profile.grid, profile('CO2').X, label=r'CO$_2$')
+plt.plot(profile.grid, profile('H2O').X, label=r'H$_2$O')
 ax.legend()
 ax.set(xlabel='Distance (cm)', ylabel='Mole fraction');
 
